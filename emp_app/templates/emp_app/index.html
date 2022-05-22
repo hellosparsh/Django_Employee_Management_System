@@ -1,0 +1,10 @@
+
+  {% extends "emp_app/base.html" %}
+  {%block content%}<div class="container">
+    <h1>Office Employee Management System</h1>
+    <a href="{% url 'emp_all' %}" class="btn btn-outline-primary">View All Employee</a>
+    <a href="{% url 'emp_add' %}" class="btn btn-outline-primary">Add an Employee</a>
+    <a href="{% url 'emp_remove' %}" class="btn btn-outline-primary">Remove an Employee</a>
+    <a href="{% url 'emp_filter' %}" class="btn btn-outline-primary">Filter Employee</a>
+  {%endblock%}
+

@@ -1,0 +1,28 @@
+{% extends "emp_app/base.html" %}
+{%block content%}
+<div class="container mt-3">
+    <form action="{% url 'emp_filter' %}" method="post">
+        <h2>Filter Employee</h2>
+        <hr>
+        {%csrf_token%}
+      <div class="mb-3 mt-3">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" name="name">
+      </div>
+      
+      <div class="mb-3 mt-3">
+        <label for="dept">Department</label>
+        <input type="text" class="form-control" id="dept" name="dept">
+      </div>
+      
+      
+      <div class="mb-3 mt-3">
+        <label for="role">Role</label>
+        <input type="text" class="form-control" id="role" name="role">
+      </div>
+      
+      
+      <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+</div>
+  {%endblock%}

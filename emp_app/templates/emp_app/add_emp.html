@@ -1,0 +1,52 @@
+{% extends "emp_app/base.html" %}
+{%block content%}
+<div class="container mt-3">
+    <h2>Add An Employee</h2>
+    <form action="{% url 'emp_add' %}" method="post">
+        {%csrf_token%}
+      <div class="mb-3 mt-3">
+        <label for="first_name">First Name</label>
+        <input type="text" class="form-control" id="first_name" name="first_name">
+      </div>
+      <div class="mb-3 mt-3">
+        <label for="last_name">Last Name</label>
+        <input type="text" class="form-control" id="last_name" name="last_name">
+      </div>
+      <div class="mb-3 mt-3">
+        <label for="dept">Department</label>
+      
+        <select class="form-select">
+            <option value="" selected disabled>Please select</option>
+            {% for dep in dep %}
+            <option>{{dep.name}}</option>
+            {%endfor%}
+        </select>
+      </div>
+      <div class="mb-3 mt-3">
+        <label for="salary">Salary</label>
+        <input type="number" class="form-control" id="salary" name="salary">
+      </div>
+      <div class="mb-3 mt-3">
+        <label for="bonus">Bonus</label>
+        <input type="number" class="form-control" id="bonus" name="bonus">
+      </div>
+      <div class="mb-3 mt-3">
+        <label for="role">Role</label>
+        <select class="form-select">
+            <option value="" selected disabled>Please select</option>
+            {% for role in role %}
+            <option>{{role.name}}</option>
+            {%endfor%}
+        </select>
+      </div>
+      <div class="mb-3 mt-3">
+        <label for="phone">Phone</label>
+        <input type="number" class="form-control" id="phone" name="phone">
+      </div>
+      
+
+
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+{%endblock%}
